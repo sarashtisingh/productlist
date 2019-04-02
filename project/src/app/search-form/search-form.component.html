@@ -1,0 +1,34 @@
+
+
+<h1>Search Form</h1>
+
+<div class="search-name">
+  <input  type="text" name="search" [(ngModel)]="searchText"  placeholder="search">
+  <input type="button" value="Search" >
+</div>
+<table class="table" border=2 mdbTable striped="true">
+  <thead class="grey lighten-1 black-text">
+  <tr>
+  <th scope="col">Id</th>
+  <th scope="col">Name</th>
+  <th scope="col">Price</th>
+  <th colspan="2>">Category</th>
+</tr>
+</thead>
+<tbody>
+<tr mdbTableCol *ngFor="let li of List |filter:searchText let i=index  ">
+    <td>
+      {{li.Id}}
+    </td>
+    <td>
+      {{li.Name}}
+    </td>
+    <td>
+      {{li.price}}
+    </td>
+    <td>
+      {{li.category}}
+    </td>
+    
+</tbody>
+</table><br>
